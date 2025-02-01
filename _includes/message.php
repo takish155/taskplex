@@ -13,6 +13,7 @@ $message = [
       "signOut" => "Sign Out",
       "createTask" => "Create Task",
       "yourCurrently" => "You are currently signed in as",
+      "tasks" => "Your Tasks",
     ],
     "home" => [
       "title" => "Get Your Task Done",
@@ -46,7 +47,7 @@ $message = [
       "passwordError" => "Please enter a password between 6 and 100 characters.",
       "usernameExist" => "Username already exists, please try another username.",
       "passwordVerifyError" => "Passwords do not match.",
-      "accountCreated" => "Account created successfully, Welcome to Omnilist!",
+      "accountCreated" => "Account created successfully, Welcome to Omnitask!",
       "createAccount" => "Create Account",
       "returnToLogin" => "Return to Login",
       "password_verify" => "Confirm Password",
@@ -74,6 +75,9 @@ $message = [
     "dashboard" => [
       "tasks" => "Your Tasks",
       "createTask" => "Create Task",
+      "totalTask" => "Total Tasks",
+      "completedTask" => "Completed Tasks",
+      "incompleteTask" => "Incomplete Tasks",
     ]
   ],
   "ja" => [
@@ -88,6 +92,7 @@ $message = [
       "signOut" => "ログアウト",
       "createTask" => "タスク作成",
       "yourCurrently" => "現在ログイン中: ",
+      "tasks" => "あなたのタスク",
     ],
     "home" => [
       "title" => "タスクを完了させよう",
@@ -121,7 +126,7 @@ $message = [
       "passwordError" => "6〜100文字のパスワードを入力してください。",
       "usernameExist" => "このユーザー名は既に存在します。別のユーザー名をお試しください。",
       "passwordVerifyError" => "パスワードが一致しません。",
-      "accountCreated" => "アカウントが正常に作成されました。Omnilistへようこそ！",
+      "accountCreated" => "アカウントが正常に作成されました。Omnitaskへようこそ！",
       "createAccount" => "アカウント作成",
       "returnToLogin" => "ログイン画面へ戻る",
       "password_verify" => "パスワード確認",

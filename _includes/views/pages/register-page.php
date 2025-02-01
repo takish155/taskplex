@@ -35,3 +35,5 @@
     </form>
   </section>
 </main>
+
+<?= loadPartials("footer") ?>

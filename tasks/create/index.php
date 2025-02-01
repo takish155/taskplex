@@ -2,8 +2,7 @@
 
 require "./../../_includes/views/partials/layout.php";
 
-$req = require "./request.php";
-
+$req = require "request.php";
 $t = $req["t"];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && !isset($req["errors"])) {
@@ -13,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !isset($req["errors"])) {
     ":user_id" => $req["session"]["id"],
   ]);
 
-  $id = $db->lastInsertId();
+  $id = query("SELECT id FROM tasks WHERE title = :title", [":title" => $req["title"]])->fetch()->id;
 
   setFlashMessage("success", $t("taskCreated"));
   redirect("/tasks?id=$id");

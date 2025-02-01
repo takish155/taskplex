@@ -2,7 +2,7 @@
 
 require " ./../../_includes/views/partials/layout.php";
 
-$req = require "./request.php";
+$req = require "request.php";
 
 $t = getMessage("tasks");
 

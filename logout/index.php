@@ -8,12 +8,7 @@ $session = getSession();
 if ($session) {
   destroySession();
 
-  setFlashMessage("success", $t("logoutSuccess"));
-
-  $lang = $_GET["lang"] ?? "";
-
-  redirect("/login");
-  exit();
+  return redirect("/login");
+} else {
+  return redirect("/");
 }
-
-redirect("/");

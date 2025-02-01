@@ -10,7 +10,7 @@ $password_verify = "";
 
 $errors = [];
 
-$req = require basePath("./register/request.php");
+$req = require "request.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ":password" => password_hash($password, PASSWORD_DEFAULT)
       ]);
 
-      $id = $db->lastInsertId();
+      $id = query("SELECT id FROM users WHERE username = :username", [":username" => $username])->fetch()->id;
 
       setFlashMessage("success", $t("accountCreated"));
       setSession($id, $username);

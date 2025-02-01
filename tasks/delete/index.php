@@ -1,7 +1,6 @@
 <?php
 
-$req = require "./request.php";
-
+$req = require "request.php";
 $t = getMessage("tasks");
 
 query("DELETE FROM tasks WHERE id = :id", [

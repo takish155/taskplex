@@ -5,7 +5,7 @@
       "t" => $t,
     ]) ?>
     <section class="w-[70%] max-lg:w-full">
-      <div class="mb-5 w-[90%]">
+      <div class="mb-5 w-[90%] max-lg:w-full">
         <?= loadPartials("flash-message") ?>
       </div>
       <form method="POST">
@@ -14,7 +14,7 @@
           <p>
             <label for="title" class="text-xs"><?= $t("title") ?></label>
           </p>
-          <input value="<?= $data->title ?? "" ?>" required class="<?= $errors["title"] ?? "" ? "border-error" : "" ?> input input-bordered w-[90%] input-md mx-auto mb-4" type="text" name="title" id="title" placeholder="<?= $t("title") ?>">
+          <input value="<?= $data->title ?? "" ?>" required class="<?= $errors["title"] ?? "" ? "border-error" : "" ?> input input-bordered w-[90%] max-lg:w-full input-md mx-auto mb-4" type="text" name="title" id="title" placeholder="<?= $t("title") ?>">
           <?php if ($errors["title"] ?? "") : ?>
             <p class="text-xs text-error"><?= $errors["title"] ?></p>
           <?php endif; ?>
@@ -23,18 +23,18 @@
           <p>
             <label for="description" class="text-xs"><?= $t("note") ?></label>
           </p>
-          <textarea value="<?= $data->title ?? "" ?>" required class="<?= $errors["title"] ?? "" ? "border-error" : "" ?> min-h-[60vh] textarea input-bordered w-[90%] input-md mx-auto mb-4" type="text" name="description" id="description" placeholder="<?= $t("title") ?>"><?= $data->description ?></textarea>
+          <textarea value="<?= $data->title ?? "" ?>" required class="<?= $errors["title"] ?? "" ? "border-error" : "" ?> min-h-[60vh] textarea input-bordered w-[90%] max-lg:w-full input-md mx-auto mb-4" type="text" name="description" id="description" placeholder="<?= $t("title") ?>"><?= $data->description ?></textarea>
           <?php if ($errors["title"] ?? "") : ?>
             <p class="text-xs text-error"><?= $errors["title"] ?></p>
           <?php endif; ?>
-          <div class="flex justify-end w-[90%] mt-6">
+          <div class="flex justify-end w-[90%] max-lg:w-full mt-6">
             <button class="btn btn-primary btn-sm">
               <?= $t("updateTask") ?>
             </button>
           </div>
         </div>
       </form>
-      <div class="flex gap-4 justify-end w-[90%]">
+      <div class="flex gap-4 justify-end w-[90%] max-lg:w-full">
         <form method="POST">
           <input type="hidden" name="_method" value="DELETE">
           <button class="btn btn-error btn-sm">
@@ -51,3 +51,5 @@
     </section>
   </div>
 </main>
+
+<?= loadPartials("footer") ?>

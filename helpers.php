@@ -15,7 +15,7 @@ function basePath($path)
 
 function loadPartials($partialName, $props = [])
 {
-  $path = basePath("./_includes/views/partials/$partialName.php");
+  $path = basePath("/_includes/views/partials/$partialName.php");
 
   if (file_exists($path)) {
     extract($props);
@@ -35,7 +35,8 @@ function loadPartials($partialName, $props = [])
 
 function loadPage($name, $props = [])
 {
-  $path = basePath("./_includes/views/pages/$name-page.php");
+  $path = basePath("/_includes/views/pages/$name-page.php");
+
 
   if (file_exists($path)) {
     // Makes the props available in the view
@@ -87,16 +88,27 @@ function form($key, $shouldClean = true)
  * Get url
  * 
  */
-function url($path)
+function url($path, $abs = false)
 {
+
+  // Production
+  // $url = "/takish155/omnitask";
+
+  // Local
+  $url = "/omnitask";
+
+  if ($abs) {
+    return "$url$path";
+  }
+
   $lang = $_GET["lang"] ?? "";
   if ($lang && !str_contains($path, "lang")) {
     if (str_contains($path, "?")) {
-      return "/omnilist$path&lang=$lang";
+      return basePath("$path&lang=$lang");
     }
 
-    return "/omnilist$path?lang=$lang";
+    return "$url$path?lang=$lang";
   }
 
-  return "/omnilist$path";
+  return "$url$path";
 }

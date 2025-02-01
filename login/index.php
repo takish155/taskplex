@@ -4,7 +4,7 @@ require " ./../../_includes/views/partials/layout.php";
 
 $t = getMessage("login");
 
-$req = require basePath("./login/request.php");
+$req = require "request.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $errors = $req["errors"] ?? [];

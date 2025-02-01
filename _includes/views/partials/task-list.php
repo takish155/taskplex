@@ -9,6 +9,8 @@ ORDER BY is_finished ASC, created_at DESC
 ", [
   "user_id" => $session["id"],
 ])->fetchAll();
+
+$id = $_GET["id"] ?? "";
 ?>
 
 
@@ -18,7 +20,7 @@ ORDER BY is_finished ASC, created_at DESC
       <h2 class="menu-title"><?= $t("tasks") ?></h2>
       <ul>
         <?php foreach ($tasks as $task): ?>
-          <li><a href="<?= url("/tasks?id=$task->id") ?>"><?= $task->is_finished ? "&#9989;"   : "" ?><?= $task->title ?></a></li>
+          <li><a class="<?= $id === $task->id ? "active" : ""  ?>" href="<?= url("/tasks?id=$task->id") ?>"><?= $task->is_finished ? "&#9989;"   : "" ?><?= $task->title ?></a></li>
         <?php endforeach; ?>
       </ul>
     </li>

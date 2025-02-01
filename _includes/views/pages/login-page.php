@@ -1,4 +1,4 @@
-<main>
+<main class="min-h-screen">
   <section class="w-[95%] max-w-[400px] mx-auto mt-[5rem]">
     <div class="mb-8">
       <h2 class="text-center font-bold text-2xl"><?= $t("title") ?></h2>
@@ -26,3 +26,5 @@
     </form>
   </section>
 </main>
+
+<?= loadPartials("footer") ?>
